@@ -3,7 +3,7 @@
 #define M 50
 
 typedef struct nodo {
-    int key;
+    int key1;
     struct nodo* next;
 }vertice;
 
@@ -12,13 +12,13 @@ vertice *tmp,*coda_top=NULL,*coda_end=NULL;
 void visita_lista() {
     printf("\n\n>>");
     for(tmp=coda_top; tmp; tmp=tmp->next)
-        printf("%d -> ", tmp->key);
+        printf("%d -> ", tmp->key1);
         printf("NULL");
 }
 
 void push(int n) {
      tmp=(vertice*)malloc(sizeof(vertice));
-     tmp->key=n;
+     tmp->key1=n;
      
      if (coda_top) {
 	 printf("\nprimo elemento : %d", n);
@@ -38,7 +38,7 @@ int pop() {
     if (coda_top) {        
         tmp=coda_top;
         coda_top=coda_top->next;
-        printf("\nho poppato %d", tmp->key);
+        printf("\nho poppato %d", tmp->key1);
         free(tmp);
     }
     else {
