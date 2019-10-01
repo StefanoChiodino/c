@@ -2,14 +2,14 @@
 
 main()
 {
-      int scelta=7, counter, giorni;
+      int scelta=7, c, giorni;
       
       do{printf("Che giorno e' il primo del mese?");
       printf("\n0) Lun\n1) Mar\n2) Mer\n3) Gio\n4) Ven\n5) Sab\n6) Dom");
       printf("\nInserire la scelta: ");
       scanf("%d",&scelta);
       printf("\n\n");}while(scelta>6);
-      counter=scelta;
+      c=scelta;
       
       printf("\n\n Lun Mar Mer Gio Ven Sab Dom\n");
      
@@ -20,7 +20,7 @@ main()
 
       for(giorni = 1; giorni < 32; giorni++){
                  printf("%4d",giorni);
-                 if((giorni+counter)%7==0)printf("\n");
+                 if((giorni+c)%7==0)printf("\n");
                  }
     
 fflush(stdin);
