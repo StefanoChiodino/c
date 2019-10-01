@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 typedef struct nodo{
-       int dato;
+       int d;
        struct nodo *sx,*dx;
        }*albero;
 
 
 albero genera(albero tmp,int n){
      int sin,des;
-     tmp->dato=n;
+     tmp->d=n;
      printf("\nInserire il dato per il figlio sinistro di %d: ",n);
      scanf("%d",&sin);
      if(sin){
@@ -32,13 +32,13 @@ albero genera(albero tmp,int n){
 void inorder(albero tmp){
      if(tmp){
              inorder(tmp->sx);
-             printf("%d ",tmp->dato);
+             printf("%d ",tmp->d);
              inorder(tmp->dx);             
      }
 }
 void preorder(albero tmp){
      if(tmp){
-             printf("%d ",tmp->dato);
+             printf("%d ",tmp->d);
              preorder(tmp->sx);
              preorder(tmp->dx);             
      }
@@ -47,7 +47,7 @@ void postorder(albero tmp){
      if(tmp){
              postorder(tmp->sx);
              postorder(tmp->dx);             
-             printf("%d ",tmp->dato);
+             printf("%d ",tmp->d);
      }
 }
 
