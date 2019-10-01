@@ -1,7 +1,7 @@
 /*Grafi rappresentati mediante liste di adiacenza
 Scrivere un programma in C che implementi la struttura dati grafo mediante le liste di adiacenza. Si richiede che
-ï	l'input sia costituito dal numero dei vertici e per ciascun vertice siano assegnati i vertici adiacenti:
-ï	si possa visitare il grafo in profondit‡ ed in ampiezza.
+‚Ä¢	l'input sia costituito dal numero dei vertici e per ciascun vertice siano assegnati i vertici adiacenti:
+‚Ä¢	si possa visitare il grafo in profondit√† ed in ampiezza.
 */
 
 #include <stdio.h>
@@ -9,14 +9,14 @@ Scrivere un programma in C che implementi la struttura dati grafo mediante le li
 #define M 50
 
 typedef struct nodo{
-        int key;
+        int key1;
         struct nodo* next;
         }vertice;
 vertice *tmp=NULL,*coda_top=NULL,*coda_end=NULL;     
 
 void push(int n){
         tmp=(vertice*)malloc(sizeof(vertice));
-        tmp->key=n;
+        tmp->key1=n;
         tmp->next=NULL;
         if(coda_top)
                      coda_end->next=tmp;
@@ -27,7 +27,7 @@ void push(int n){
 
 int pop(){
     int n;
-    n=coda_top->key;
+    n=coda_top->key1;
     tmp=coda_top;
     coda_top=coda_top->next;
     free(tmp);
@@ -45,10 +45,10 @@ int pop(){
      while(coda_top){
                      v=pop();
                      for(tmp=grafo[v];tmp;tmp=tmp->next)
-                                                         if(!visitato[tmp->key]){
-                                                                                        printf("%5d",tmp->key);
-                                                                                        push(tmp->key);
-                                                                                        visitato[tmp->key]=1;
+                                                         if(!visitato[tmp->key1]){
+                                                                                        printf("%5d",tmp->key1);
+                                                                                        push(tmp->key1);
+                                                                                        visitato[tmp->key1]=1;
                                                          }
                      
      }
@@ -68,8 +68,8 @@ void visita_profondita(int n,vertice * grafo[]){
      visitato[n]=1;
      printf("%5d",n);
      for(temp=grafo[n];temp;temp=temp->next)
-                                            if(!visitato[temp->key])
-                                                                    visita_profondita(temp->key,grafo);
+                                            if(!visitato[temp->key1])
+                                                                    visita_profondita(temp->key1,grafo);
      
 }
 
@@ -90,9 +90,9 @@ void visita_livello(vertice * grafo[],int n_vertici){
      while(coda_top){
                                  tmp=grafo[pop()];
                                  while(tmp){
-                                            if(!visitato[tmp->key]){
-                                                                    visitato[tmp->key]=1;
-                                                                    push(tmp->key);
+                                            if(!visitato[tmp->key1]){
+                                                                    visitato[tmp->key1]=1;
+                                                                    push(tmp->key1);
                                             }
                                             tmp=tmp->next;
                                  }
@@ -107,7 +107,7 @@ void stampa_grafo(int n_vertici, vertice *grafo[]){
                             tmp=grafo[i];
                             printf("%d : ",i);
                             while(tmp){
-                                       printf("%d - > ",tmp->key);
+                                       printf("%d - > ",tmp->key1);
                                        tmp=tmp->next;
                             }                                     
      printf("NULL\n");
@@ -121,7 +121,7 @@ vertice *crea_lista(int ver_adi){
      for(;ver_adi;ver_adi--){
                              tmp=(vertice*)malloc(sizeof(vertice));
                              tmp->next=testa;
-                             scanf("%d",&tmp->key);
+                             scanf("%d",&tmp->key1);
                              testa=tmp;
      }                    
 }
