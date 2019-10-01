@@ -2,7 +2,7 @@
 #define MAX_SIZE 5
 
 typedef struct{
-        int key;
+        int k;
         } elemento;
 
 elemento coda[MAX_SIZE];
@@ -34,7 +34,7 @@ int main(){
              scanf("%d",&scelta);
              if (scelta==1){
                             printf("\ninserisci il numero: ");
-                            scanf("%d",&item.key);
+                            scanf("%d",&item.k);
                             addc(davanti,&dietro,item);
                             }
              else if(scelta==2)
